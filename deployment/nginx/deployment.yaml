@@ -23,8 +23,11 @@ spec:
             - containerPort: 80
           volumeMounts:
             - name: ${volume_name}
-              mountPath: ${mountPath}
-              subPath: ${subPath}
+              mountPath: ${mountPath-01}
+              subPath: ${subPath-01}
+            - name: ${volume_name}
+              mountPath: ${mountPath-02}
+              subPath: ${subPath-02}
           readinessProbe:
             httpGet:
               path: /
@@ -48,3 +51,5 @@ spec:
         - name: ${volume_name}
           configMap:
             name: ${configMap_name}
+            
+            
