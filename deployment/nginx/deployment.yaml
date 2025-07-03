@@ -9,7 +9,7 @@ spec:
   replicas: ${replicas}
   selector:
     matchLabels:
-      app: nginx
+      app: ${pod_selector}
   template:
     metadata:
       labels:
